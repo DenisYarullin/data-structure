@@ -157,6 +157,4 @@ bool DoublyLinkedList<T>::Remove(T item)
 	}
 	return false;
 }
-
-
 #endif // DOUBLY_LINKED_LIST_H_
