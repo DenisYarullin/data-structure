@@ -21,6 +21,8 @@ public:
 	void RemoveFirst();
 	void RemoveLast();
 	bool Remove(T item);
+	int Count() { return count;  }
+	T GetTailValue() { return tail->value; }
 private:
 	Node<T> *head;
 	Node<T> *tail;
