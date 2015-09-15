@@ -23,6 +23,7 @@ public:
 	bool Remove(T item);
 	int Count() { return count;  }
 	T GetTailValue() { return tail->value; }
+	T GetHeadValue() { return head->value; }
 private:
 	Node<T> *head;
 	Node<T> *tail;
