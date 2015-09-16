@@ -36,6 +36,12 @@
     <ClCompile Include="deque.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stack_based_deque.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="deque_based_array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="deque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stack_based_deque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="deque_based_array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

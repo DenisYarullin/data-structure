@@ -1,15 +1,17 @@
 #include <iostream>
 //#include "linked_list.h"
 //#include "doubly_linked_list.h"
-#include "array_list.h"
-#include <iostream>
+//#include "array_list.h"
+#include "deque_based_array.h"
 
 using namespace std;
 
 
 int main()
 {
-	ArrayList<int> array;
+	Deque<int> deque;
+	
+	/*ArrayList<int> array;
 	array.Add(1);
 	array.Add(2);
 	array.Add(3);
@@ -25,7 +27,7 @@ int main()
 
 	array.RemoveAt(2);
 	for (int i = 0; i < array.Count(); i++)
-		cout << array[i] << endl;
+		cout << array[i] << endl;*/
 
 
 	// Äëÿ list è doubly list
