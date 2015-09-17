@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="array_list.cpp" />
+    <ClCompile Include="binary_search.cpp" />
     <ClCompile Include="deque.cpp" />
     <ClCompile Include="deque_based_array.cpp" />
     <ClCompile Include="doubly_linked_list.cpp" />
@@ -76,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="array_list.h" />
+    <ClInclude Include="binary search.h" />
     <ClInclude Include="deque.h" />
     <ClInclude Include="deque_based_array.h" />
     <ClInclude Include="doubly_linked_list.h" />
