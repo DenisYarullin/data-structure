@@ -3,14 +3,12 @@
 //#include "doubly_linked_list.h"
 //#include "array_list.h"
 #include "deque_based_array.h"
-
 using namespace std;
 
 
 int main()
 {
 	Deque<int> deque;
-	
 	/*ArrayList<int> array;
 	array.Add(1);
 	array.Add(2);

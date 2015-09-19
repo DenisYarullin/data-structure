@@ -42,7 +42,10 @@
     <ClCompile Include="deque_based_array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="binary_search.cpp">
+    <ClCompile Include="binary_search_tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="set.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,7 +74,10 @@
     <ClInclude Include="deque_based_array.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="binary search.h">
+    <ClInclude Include="binary search_tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="set.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
