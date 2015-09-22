@@ -48,6 +48,9 @@
     <ClCompile Include="set.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="iterator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linked_list.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="set.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

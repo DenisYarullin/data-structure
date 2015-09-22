@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	Deque<int> deque;
+	Deque<int> *deque = new Deque<int>();
 	/*ArrayList<int> array;
 	array.Add(1);
 	array.Add(2);

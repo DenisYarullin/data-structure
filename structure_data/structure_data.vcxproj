@@ -44,9 +44,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -56,11 +58,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\gtest-1.7.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -69,6 +73,7 @@
     <ClCompile Include="deque.cpp" />
     <ClCompile Include="deque_based_array.cpp" />
     <ClCompile Include="doubly_linked_list.cpp" />
+    <ClCompile Include="iterator.cpp" />
     <ClCompile Include="linked_list.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="queue.cpp" />
@@ -82,6 +87,7 @@
     <ClInclude Include="deque.h" />
     <ClInclude Include="deque_based_array.h" />
     <ClInclude Include="doubly_linked_list.h" />
+    <ClInclude Include="iterator.h" />
     <ClInclude Include="linked_list.h" />
     <ClInclude Include="queue.h" />
     <ClInclude Include="set.h" />
