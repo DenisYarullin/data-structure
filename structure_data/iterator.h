@@ -1,7 +1,6 @@
 #ifndef ITERATOR_H_
 #define ITERATOR_H_
 
-
 #include <iterator>
 
 template <typename T>
