@@ -58,6 +58,25 @@ public:
 	{
 		return Iterator<T>(items + count);
 	}
+
+	friend std::ostream &operator<<(std::ostream &os, const ArrayList &list)
+	{
+		for (size_t i = 0; i < list.count; ++i)
+		{
+			os << list.items[i] << " ";
+		}
+		return os;
+	}
+
+	friend void PrintTo(const ArrayList &list, ::std::ostream* os)
+	{
+		for (size_t i = 0; i < list.count; ++i)
+		{
+			*os << list.items[i] << " ";
+		}
+	}
+
+
 private:
 	void swap(ArrayList &other);
 	void GrowArray();

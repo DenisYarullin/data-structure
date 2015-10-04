@@ -1,0 +1,76 @@
+Assertions
+
+Explicit Success and Failure
+SUCCEED(), FAIL(), ADD_FAILURE(), ADD_FAILURE_AT("file_path", line_number)
+
+Exception Assertions
+ ASSERT_THROW(statement, exception_type); ASSERT_ANY_THROW(statement); ASSERT_NO_THROW(statement);
+
+Using an Existing Boolean Function
+ASSERT_PRED1(pred1, val1); ASSERT_PRED2(pred2, val1, val2);
+
+Using a Function That Returns an AssertionResult
+::testing::AssertionResult IsEven(int n) {
+	if ((n % 2) == 0)
+		return ::testing::AssertionSuccess() << n << " is even";
+	else
+		return ::testing::AssertionFailure() << n << " is odd";
+}
+ EXPECT_TRUE(IsEven(Fib(4)))
+
+Using a Predicate-Formatter
+ASSERT_PRED_FORMAT1(pred_format1, val1); ASSERT_PRED_FORMAT2(pred_format2, val1, val2);
+Returns the smallest prime common divisor of m and n,
+or 1 when m and n are mutually prime.
+int SmallestPrimeCommonDivisor(int m, int n) { ... }
+A predicate-formatter for asserting that two integers are mutually prime.
+::testing::AssertionResult AssertMutuallyPrime(const char* m_expr, const char* n_expr, int m, int n) {
+	if (MutuallyPrime(m, n))
+		return ::testing::AssertionSuccess();
+
+	return ::testing::AssertionFailure()
+		<< m_expr << " and " << n_expr << " (" << m << " and " << n
+		<< ") are not mutually prime, " << "as they have a common divisor "
+		<< SmallestPrimeCommonDivisor(m, n);
+}
+EXPECT_PRED_FORMAT2(AssertMutuallyPrime, b, c);
+
+Floating-Point Comparison
+ASSERT_FLOAT_EQ(expected, actual); ASSERT_DOUBLE_EQ(expected, actual); ASSERT_NEAR(val1, val2, abs_error)
+
+Floating-Point Predicate-Format Functions
+EXPECT_PRED_FORMAT2(::testing::FloatLE, val1, val2);
+EXPECT_PRED_FORMAT2(::testing::DoubleLE, val1, val2);
+
+Type Assertions
+::testing::StaticAssertTypeEq<T1, T2>();
+
+Using Assertions in Sub-routines
+SCOPED_TRACE(message);
+
+Asserting on Subroutines
+ASSERT_NO_FATAL_FAILURE(statement);
+
+Checking for Failures in the Current Test
+HasFatalFailure() in the ::testing::Test class returns true if an assertion in the current test
+has suffered a fatal failure. This allows functions to catch fatal failures in a sub-routine and return early.
+Similarly, HasNonfatalFailure() returns true if the current test has at least one non-fatal failure, and HasFailure()
+returns true if the current test has at least one failure of either kind.
+
+Logging Additional Information
+RecordProperty("key", value)
+
+Sharing Resources Between Tests in the Same Test Case
+SetUpTestCase() and TearDownTestCase()
+
+Global Set-Up and Tear-Down
+Отнаследоваться от:
+class Environment {
+ public:
+  virtual ~Environment() {}
+  // Override this to define how to set up the environment.
+  virtual void SetUp() {}
+  // Override this to define how to tear down the environment.
+  virtual void TearDown() {}
+};
+::testing::Environment* const foo_env = ::testing::AddGlobalTestEnvironment(new FooEnvironment);

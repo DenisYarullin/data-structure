@@ -123,4 +123,30 @@ TEST_F(ArrayListTest, IndexOfOperation)
 	EXPECT_PRED_FORMAT2(IndexOf, *array3, "E");
 }
 
+TEST_F(ArrayListTest, FloatingPointTest)
+{
+	//EXPECT_FLOAT_EQ(expected, actial);
+	EXPECT_DOUBLE_EQ(1.1, array1[0]);
+	EXPECT_NEAR(1.1, array1[0], 0.001);
+	EXPECT_PRED_FORMAT2(::testing::DoubleLE, 1, 2);
+}
+
+template <typename T>
+void FuncTest()
+{
+	ArrayList<T> test;
+	::testing::StaticAssertTypeEq<int, T>();
+	test.Add(100);
+}
+
+TEST_F(ArrayListTest, TypeAssertions)
+{
+	FuncTest<int>();
+}
+
+TEST_F(ArrayListTest, PrintTest)
+{
+	EXPECT_TRUE(array0.Count() == 4) << "Elements: " << ::testing::PrintToString(array0);
+}
+
 #endif // ARRAY_LIST_UNITTEST_H_

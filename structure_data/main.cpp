@@ -9,23 +9,25 @@ using namespace std;
 int main()
 {
 	//Deque<int> *deque = new Deque<int>();
-	/*ArrayList<int> array;
+	ArrayList<int> array;
 	array.Add(1);
 	array.Add(2);
 	array.Add(3);
 	array.Add(4);
 	array.Add(5);
 
-	for (int i = 0; i < array.Count(); i++)
-		cout << array[i] << endl;
+	cout << array;
 
-	array.Insert(2, 1000);
-	for (int i = 0; i < array.Count(); i++)
-		cout << array[i] << endl;
+	//for (int i = 0; i < array.Count(); i++)
+	//	cout << array[i] << endl;
 
-	array.RemoveAt(2);
-	for (int i = 0; i < array.Count(); i++)
-		cout << array[i] << endl;*/
+	//array.Insert(2, 1000);
+	//for (int i = 0; i < array.Count(); i++)
+	//	cout << array[i] << endl;
+
+	//array.RemoveAt(2);
+	//for (int i = 0; i < array.Count(); i++)
+	//	cout << array[i] << endl;*/
 
 
 	// Äëÿ list è doubly list
