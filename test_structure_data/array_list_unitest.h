@@ -55,6 +55,11 @@ protected:
 			<< item_expr << " (" << item << ")";
 	}
 
+	void SubroutineTest(int size)
+	{
+		EXPECT_TRUE(array0.Count() == size);
+	}
+
 	ArrayList<int> array0;
 	ArrayList<double> array1;
 	ArrayList<int> array2;
@@ -148,5 +153,59 @@ TEST_F(ArrayListTest, PrintTest)
 {
 	EXPECT_TRUE(array0.Count() == 4) << "Elements: " << ::testing::PrintToString(array0);
 }
+
+
+typedef ArrayListTest ArrayListTestDeathTest;
+
+void foo(int *n)
+{
+	std::cerr << "PZDC";
+	exit(1);
+}
+
+TEST_F(ArrayListTestDeathTest, death)
+{
+	ASSERT_DEATH({ int n = 5; foo(&n); }, "PZDC");
+}
+
+TEST_F(ArrayListTestDeathTest, exit)
+{
+	ASSERT_EXIT({ int n = 5; foo(&n); }, ::testing::ExitedWithCode(1),  "PZDC");
+}
+
+TEST_F(ArrayListTest, SubTest)
+{
+	{
+		SCOPED_TRACE("Test message");
+		SubroutineTest(4);
+	}
+	SubroutineTest(4);
+}
+
+
+void Foo()
+{
+	ASSERT_EQ(1, 1);
+}
+
+
+TEST_F(ArrayListTest, AssertingOnSubroutines)
+{
+	ASSERT_NO_FATAL_FAILURE(Foo());
+
+	ASSERT_EQ(10, 10);
+}
+
+//Similarly, HasNonfatalFailure() returns true if the current test has at least one non - fatal failure,
+//and HasFailure() returns true if the current test has at least one failure of either kind.
+TEST_F(ArrayListTest, CheckingForFailuresInCurrentTest)
+{
+	Foo();
+
+	if (HasFatalFailure())
+		return;
+	int a = 10;
+}
+
 
 #endif // ARRAY_LIST_UNITTEST_H_

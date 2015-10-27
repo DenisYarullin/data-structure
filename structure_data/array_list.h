@@ -4,7 +4,7 @@
 #include "iterator.h"
 #include <algorithm>
 #include <exception>
-#include <vld.h>
+//#include <vld.h>
 
 
 template <typename T>
